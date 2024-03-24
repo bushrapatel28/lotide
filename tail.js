@@ -7,11 +7,7 @@ const assertEqual = function(actual, expected) {
 };
 
 const tail = function(arr) {
-  let newArr = [];
-
-  for (let i = 1; i < arr.length; i++) {
-    newArr.push(arr[i]);
-  }
+  let newArr = arr.slice(1);
   return newArr;
 };
 
@@ -25,4 +21,6 @@ tail(words);
 assertEqual(words.length, 3);
 
 tail([5]);
+assertEqual(tail([5]).length, 0);
 tail([]);
+assertEqual(tail([]).length, 0);
