@@ -36,7 +36,7 @@ const without = function(source, itemsToRemove) {
       }
     }
   }
-  console.log(newArray);
+  return newArray;
 };
 
 without([1, 2, 3], [1]);
