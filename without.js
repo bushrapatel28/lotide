@@ -39,14 +39,11 @@ const without = function(source, itemsToRemove) {
   return newArray;
 };
 
-without([1, 2, 3], [1]);
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
+assertArraysEqual(without([1, 2, 3], [1]), [2 , 3]);
 
-without([1, 2, 3], [2, 3]);
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
+assertArraysEqual(without([1, 2, 3], [2, 3]), [1]);
 
-without(["1", "2", "3"], [1, 2, "3"]);
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
+assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]);
