@@ -24,7 +24,7 @@ const assertArraysEqual = function(arr1, arr2) {
 
 const middle = function(arr) {
   const size = arr.length;
-  let mid = parseInt(size / 2);
+  let mid = Math.floor(size / 2);
   const result = [];
 
   if (size <= 2) {
