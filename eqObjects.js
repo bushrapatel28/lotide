@@ -15,7 +15,7 @@ const eqObjects = function(object1, object2) {
     return false;
   } else {
     for (const [key, value] of Object.entries(object1)) {
-      if (object1[key, value] === object2[key, value]) {
+      if (object1[key] === object2[key]) {
         result = true;
       } else {
         return false;
