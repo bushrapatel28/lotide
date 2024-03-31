@@ -21,26 +21,33 @@ const eqObjects = function(object1, object2) {
     return false;
   } else {
     for (let key of arrOfObjKeys1) {            //Looping over keys of object1
-      if(arrOfObjKeys2.includes(key)) {         //Checking if the same key exists in object2
-        if(Array.isArray(object1[key]) || Array.isArray(object2[key])) { //Equality check for Object key's array values
-        result = eqArrays(object1[key], object2[key]);
-        } else if(object1[key] === object2[key]) {    //Equality Check for Object key's values
-          result = true;
-        } else {
+      if (arrOfObjKeys2.includes(key)) {         //Checking if the same key exists in object2
+        if (Array.isArray(object1[key]) || Array.isArray(object2[key])) {    //Equality check for Object key's array values
+          console.log(eqArrays(object1[key], object2[key]));
+          if (!eqArrays(object1[key], object2[key])) {
+            return false;
+          } else {
+            result = true;
+          }
+        } else if (object1[key] !== object2[key]) {
           return false;
+        } else {
+          result = true;
         }
+      } else {
+        return false;
       }
-      // if (!arrOfObjKeys2.includes(key) || !eqArrays(object1[key], object2[key])) {
-      //   return false;
-      // }
     }
+  }
+  // if (!arrOfObjKeys2.includes(key) || !eqArrays(object1[key], object2[key])) {
+  //   return false;
+  // }
   //   for (let key1 of arrOfObjKeys1) {   //Looping over keys of object1
   //     for(let key2 of arrOfObjKeys2) {  //Looping over keys of object2
   //       if(key1 === key2) {             //Checking for keys equality
-  //       } 
+  //       }
   //     }
   //   }
-  }
   return result;
 };
 
@@ -61,4 +68,4 @@ const anotherShirtObject = { size: "medium", color: "red" };
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
 assertObjectsEqual(shirtObject, anotherShirtObject);
 assertObjectsEqual(shirtObject, longSleeveShirtObject);
-assertObjectsEqual({a: '1', b: 2}, {b: 2, a: '1'});
+assertObjectsEqual({ a: '1', b: [2, 3] }, { b: [2, 3], a: '1' });
