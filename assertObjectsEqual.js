@@ -23,11 +23,8 @@ const eqObjects = function(object1, object2) {
     for (let key of arrOfObjKeys1) {            //Looping over keys of object1
       if (arrOfObjKeys2.includes(key)) {         //Checking if the same key exists in object2
         if (Array.isArray(object1[key]) || Array.isArray(object2[key])) {    //Equality check for Object key's array values
-          console.log(eqArrays(object1[key], object2[key]));
           if (!eqArrays(object1[key], object2[key])) {
             return false;
-          } else {
-            result = true;
           }
         } else if (object1[key] !== object2[key]) {
           return false;
@@ -40,15 +37,7 @@ const eqObjects = function(object1, object2) {
       }
     }
   }
-  // if (!arrOfObjKeys2.includes(key) || !eqArrays(object1[key], object2[key])) {
-  //   return false;
-  // }
-  //   for (let key1 of arrOfObjKeys1) {   //Looping over keys of object1
-  //     for(let key2 of arrOfObjKeys2) {  //Looping over keys of object2
-  //       if(key1 === key2) {             //Checking for keys equality
-  //       }
-  //     }
-  //   }
+  
   return result;
 };
 
