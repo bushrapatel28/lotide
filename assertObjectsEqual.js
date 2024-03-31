@@ -35,7 +35,8 @@ const eqObjects = function(object1, object2) {
           result = true;
         }
       } else {
-        return false;
+        result = false;
+        break;
       }
     }
   }
