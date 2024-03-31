@@ -54,3 +54,4 @@ const anotherShirtObject = { size: "medium", color: "red" };
 const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
 assertObjectsEqual(shirtObject, anotherShirtObject);
 assertObjectsEqual(shirtObject, longSleeveShirtObject);
+assertObjectsEqual({a: '1', b: 2}, {b: 2, a: '1'});
