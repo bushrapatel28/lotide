@@ -25,6 +25,8 @@ const eqObjects = function(object1, object2) {
         if (Array.isArray(object1[key]) || Array.isArray(object2[key])) {    //Equality check for Object key's array values
           if (!eqArrays(object1[key], object2[key])) {
             return false;
+          } else {
+            result = true;
           }
         } else if (object1[key] !== object2[key]) {
           return false;
@@ -59,3 +61,4 @@ const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "lon
 assertObjectsEqual(shirtObject, anotherShirtObject);
 assertObjectsEqual(shirtObject, longSleeveShirtObject);
 assertObjectsEqual({ a: '1', b: [2, 3] }, { b: [2, 3], a: '1' });
+assertObjectsEqual({ b: [2, 3] }, { b: [2, 3] });
