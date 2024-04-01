@@ -29,7 +29,7 @@ const takeUntil = function(array, callback) {
   for (let index in array) {
     if (callback(array[index])) {
       result = array.slice(0, index);   //slicing the array from the beginning (index 0) until true valued element found at index
-      break;                  //Loop exists once callback returns true value;
+      break;                  //Loop exits once callback returns true value;
     }
   }
   
