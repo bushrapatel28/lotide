@@ -26,10 +26,12 @@ const assertArraysEqual = function(arr1, arr2) {
 const takeUntil = function(array, callback) {
   let result = [];
   
-  for (let index in array) {
-    if (callback(array[index])) {
-      result = array.slice(0, index);   //slicing the array from the beginning (index 0) until true valued element found at index
+  for (let element of array) {
+    if (callback(element)) {
+      //result = array.slice(0, index);   //slicing the array from the beginning (index 0) until true valued element found at index
       break;                  //Loop exits once callback returns true value;
+    } else {
+      result.push(element);
     }
   }
   
