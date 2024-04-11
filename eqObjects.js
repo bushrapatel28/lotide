@@ -29,7 +29,7 @@ const eqObjects = function(object1, object2) {
   } else {
     for (let key of arrOfObjKeys1) {            //Looping over keys of object1
       if (arrOfObjKeys2.includes(key)) {         //Checking if the same key exists in object2
-        if(Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+        if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
           if (!eqArrays(object1[key], object2[key])) {
             return false;
           }
