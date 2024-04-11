@@ -23,7 +23,7 @@ const assertEqual = function(actual, expected) {
 const eqObjects = function(object1, object2) {
   const arrOfObjKeys1 = Object.keys(object1);
   const arrOfObjKeys2 = Object.keys(object2);
-  let result = false;
+  //let result = false;
 
   if (arrOfObjKeys1.length !== arrOfObjKeys2.length) {
     return false;
@@ -32,21 +32,22 @@ const eqObjects = function(object1, object2) {
       if (arrOfObjKeys2.includes(key)) {         //Checking if the same key exists in object2
         
         if(Array.isArray(object1[key]) && Array.isArray(object2[key])) {
-          if (eqArrays(object1[key], object2[key])) {
-            result = true;
+          if (!eqArrays(object1[key], object2[key])) {
+            return false;
           }
         } else if (object1[key] !== object2[key]) {
           return false;
-        } else {
-          result = true;
-        }
+        } //else {
+        //   result = true;
+        // }
       } else {
-        result = false;
-        break;
+        // result = false;
+        // break;
+        return false;
       }
     }
   }
-  return result;
+  return true;
 };
 
 const shirtObject = { color: "red", size: "medium" };
