@@ -2,6 +2,11 @@ const assert = require('chai').assert;
 const tail = require("../tail");
 
 describe("#tail", () => {
+  it("makes sure the original array was not altered by the tail function", () => {
+    tail(["Yo Yo", "Lighthouse", "Labs"]);
+    assert.strictEqual(["Yo Yo", "Lighthouse", "Labs"].length, 3);
+  });
+
   it("returns ['Lighthouse', 'Labs'] for ['Yo Yo', 'Lighthouse', 'Labs']", () => {
     assert.deepEqual(tail(["Yo Yo", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
   });
