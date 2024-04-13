@@ -1,10 +1,10 @@
 const assertEqual = require("../assertEqual");
 const tail = require("../tail");
 
-// const result = tail(["Hello", "Lighthouse", "Labs"]);
-// for (let t = 0; t < result.length; t++) {
-//   assertEqual(result[t], ["Lighthouse", "Labs"][t]);
-// }
+const result = tail(["Hello", "Lighthouse", "Labs"]);
+for (let t = 0; t < result.length; t++) {
+  assertEqual(result[t], ["Lighthouse", "Labs"][t]);
+}
 
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words);
