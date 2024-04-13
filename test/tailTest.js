@@ -3,8 +3,9 @@ const tail = require("../tail");
 
 describe("#tail", () => {
   it("makes sure the original array was not altered by the tail function", () => {
-    tail(["Yo Yo", "Lighthouse", "Labs"]);
-    assert.strictEqual(["Yo Yo", "Lighthouse", "Labs"].length, 3);
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    tail(words);
+    assert.strictEqual(words.length, 3);
   });
 
   it("returns ['Lighthouse', 'Labs'] for ['Yo Yo', 'Lighthouse', 'Labs']", () => {
